@@ -1,7 +1,14 @@
-import { Router } from "express"
-import UserController from './app/controllers/UserController'
-const routes = new Router()
+import { Router } from "express";
+import UserController from "./app/controllers/UserController";
+import SessionController from "./app/controllers/SessionController";
+import productController from "./app/controllers/productController";
 
-routes.post('/users',UserController.store)
+const routes = new Router();
 
-export default routes
+routes.post("/users", UserController.store);
+
+routes.post("/sessions", SessionController.store);
+
+routes.post("/products", productController.store);
+
+export default routes;
