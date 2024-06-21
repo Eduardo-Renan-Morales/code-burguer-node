@@ -17,6 +17,7 @@ export default (request, response, next) => {
       }
       1;
       request.userId = decoded.id;
+      request.userName = decoded.name;
 
       return next();
     });
