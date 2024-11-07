@@ -2,11 +2,11 @@ import { Router } from "express";
 import multer from "multer";
 import multerConfig from "./config/multer";
 
-import UserController from "./app/controllers/UserController";
-import SessionController from "./app/controllers/SessionController";
-import ProductController from "./app/controllers/productController";
 import CategoryController from "./app/controllers/CategoryController";
 import OrderController from "./app/controllers/OrderController";
+import SessionController from "./app/controllers/SessionController";
+import UserController from "./app/controllers/UserController";
+import ProductController from "./app/controllers/productController";
 
 import authMiddlewares from "./app/middlewares/auth";
 
@@ -14,11 +14,11 @@ const upload = multer(multerConfig);
 
 const routes = new Router();
 
-routes.post("/users", UserController.store);
+routes.post("/users", UserController.store); // cadastro
 
-routes.post("/sessions", SessionController.store);
+routes.post("/sessions", SessionController.store);  // login
 
-routes.use(authMiddlewares);
+routes.use(authMiddlewares); // Sera chamada por todas as rotas abaixo
 
 routes.post("/products", upload.single("file"), ProductController.store);
 routes.get("/products", ProductController.index);
