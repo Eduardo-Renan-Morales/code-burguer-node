@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 import Sequelize from "sequelize";
 
-import Category from "../app/models/Category";
-import Product from "../app/models/Products";
-import User from "../app/models/User";
+import Category from "../app/models/Category.js";
+import Product from "../app/models/Products.js";
+import User from "../app/models/User.js";
 
 const models = [User, Product, Category];
 

@@ -3,11 +3,11 @@ store    => Cadastrar / Adicinar
 index    => Listar vários
 show     => Listar apenas um
 update   => Atualizar
-delete   => deletar 
+delete   => deletar
 */
 import { v4 } from "uuid";
-import User from "../models/User";
 import * as Yup from "yup";
+import User from "../models/User.js";
 
 class UserController {
   async store(request, response) {

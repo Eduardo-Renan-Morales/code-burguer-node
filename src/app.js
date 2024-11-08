@@ -3,7 +3,7 @@ import express from "express";
 import { resolve } from "path";
 import routes from "./routes.js";
 
-import "./database";
+import "./database/index.js";
 
 class App {
   constructor() {
