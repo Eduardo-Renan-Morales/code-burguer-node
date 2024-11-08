@@ -1,10 +1,9 @@
-import Sequelize from "sequelize";
-import configDatabase from "../config/database";
 import mongoose from "mongoose";
+import Sequelize from "sequelize";
 
-import User from "../app/models/User";
-import Product from "../app/models/Products";
 import Category from "../app/models/Category";
+import Product from "../app/models/Products";
+import User from "../app/models/User";
 
 const models = [User, Product, Category];
 
@@ -15,7 +14,7 @@ class Database {
   }
 
   init() {
-    this.connection = new Sequelize(configDatabase);
+    this.connection = new Sequelize('postgresql://postgres:MViLoQWyWFcCDxnEsRdSgGgfLdMMYmnP@junction.proxy.rlwy.net:32151/railway');
     models
       .map((model) => model.init(this.connection))
       .map(
@@ -25,7 +24,7 @@ class Database {
 
   mongo() {
     this.mongoConnections = mongoose.connect(
-      "mongodb://localhost:27017/codeburger"
+      "mongodb://mongo:cqNLEKMNqyMkLssrtVXiclkDZluqAUWH@autorack.proxy.rlwy.net:22771"
       // ,
       // {
       //   useNewUrlParser: true,
