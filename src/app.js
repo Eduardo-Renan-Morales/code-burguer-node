@@ -5,11 +5,6 @@ import routes from "./routes.js";
 
 import "./database/index.js";
 
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url); // Remova esta linha se já estiver declarada
-const __dirname = path.dirname(__filename); // Remova esta linha se já estiver declarada
 
 class App {
   constructor() {
