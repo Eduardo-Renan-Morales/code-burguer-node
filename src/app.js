@@ -5,11 +5,15 @@ import routes from "./routes.js";
 
 import "./database/index.js";
 
+const corsOptions = {
+  origin: 'https://devburger-interface-brown.vercel.app',
+  credentials: true,
+}
 
 class App {
   constructor() {
     this.app = express();
-    this.app.use(cors());
+    this.app.use(cors(corsOptions));
     this.middlewares();
     this.routes();
   }
